@@ -7,7 +7,8 @@
 *
 * Compile : gcc -std=c99 -Wall -Wextra -pedantic "PAP Project.c" -o PAP521S_Project_A
 * Run : ./PAP521S_Project_A
-* Author : [Pharrell Mwiya 226013006, Selma Alukolo, Guillermo Mendez, and John Doe]
+* Author : [Pharrell Mwiya 226013006, Selma Alukolo, Guillermo Heita 
+225109190, and John Doe]
 * Date : 2024-06-15
 */  
 
