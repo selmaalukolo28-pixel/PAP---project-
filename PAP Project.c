@@ -5,7 +5,7 @@
 * Modules : 1. Employee 2. Budget 3. Supplier 4. Asset 5. Reports
 * Storage : arrays (all data is kept in memory while the program runs)
 *
-* Compile : gcc -std=c99 -Wall -Wextra -pedantic PAP521S_Project_A.c -o PAP521S_Project_A
+* Compile : gcc -std=c99 -Wall -Wextra -pedantic "PAP Project.c" -o PAP521S_Project_A
 * Run : ./PAP521S_Project_A
 * Author : [Pharrell Mwiya 226013006, Selma Alukolo, Guillermo Mendez, and John Doe]
 * Date : 2024-06-15
@@ -133,7 +133,15 @@ void addDepartmentBudget(void);
 void enterExpenditure(void);
 void displayBudgets(void);
 void showOverBudgetDepartments(void);
-int findDepartment(const char name[]);
+int findDepartment(const char name[]) {
+int i;
+for (i = 0; i < debtCount; i++) {
+if (equalsIgnoreCase(debtName[i], name)) {
+return i;
+}
+}
+return -1;
+}
 double calculateRemaining(double allocated, double expenditure);
 
 /* Section 4 - Supplier module */
@@ -239,7 +247,7 @@ void trimSpaces(char text[]) {
         digits++;
     }
 
-    return digits > 1 && digits <= 9;
+    return digits >= 1 && digits <= 9;
 }
 
 /* Returns 1 if test is a decimal number such as 250cor 1500.75.
@@ -1053,7 +1061,7 @@ void assetMenu(void) {
     do {
         printf("\n--- ASSET MANAGEMENT ---\n");
         printf("1. Add Asset\n");
-        printf("2. Display All Assets");
+        printf("2. Display All Assets\n");
         printf("3. Search Assets\n");
         printf("4. Back to Main Menu\n");
         choice = readInt("Enter your choice: ", 1, 4);
@@ -1147,7 +1155,7 @@ void searchAssets(void) {
         return;
     }
 
-    readRequiredText("Enternasset name, type or department to search: ", text, TEXT_LEN);
+    readRequiredText("Enter asset name, type or department to search: ", text, TEXT_LEN);
 
     for (i = 0; i < assetCount; i++) {
         if (containsIgnoreCase(assetName[i], text) || containsIgnoreCase(assetType[i], text) || containsIgnoreCase(assetDepartment[i], text)) {
@@ -1225,11 +1233,16 @@ void employeeReport(void) {
 
     for (i = 0; i < empCount; i++) {
         gross = calculateGrossSalary(empBasic[i], empHousing[i], empTransport[i]);
-        total = total + gross;
+        total += gross;
 
         if (gross > highest) {
             highest = gross;
             highIndex = i;
+        }
+
+        if (gross < lowest) {
+            lowest = gross;
+            lowIndex = i;
         }
     }
 
