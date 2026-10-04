@@ -135,8 +135,8 @@ void displayBudgets(void);
 void showOverBudgetDepartments(void);
 int findDepartment(const char name[]) {
 int i;
-for (i = 0; i < debtCount; i++) {
-if (equalsIgnoreCase(debtName[i], name)) {
+for (i = 0; i < deptCount; i++) {
+if (equalsIgnoreCase(deptName[i], name)) {
 return i;
 }
 }
