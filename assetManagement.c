@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
 #define MAX_ASSETS 100
-
-// Asset structure
 typedef struct {
     int assetID;
     char name[50];
@@ -12,15 +9,11 @@ typedef struct {
     char department[30];
     char condition[20];
 } Asset;
-
 Asset assets[MAX_ASSETS];
 int assetCount = 0;
-
-// Function prototypes
 void addAsset();
 void displayAssets();
 void searchAsset();
-
 int main() {
     int choice;
 
@@ -44,8 +37,6 @@ int main() {
 
     return 0;
 }
-
-// Add new asset
 void addAsset() {
     if(assetCount >= MAX_ASSETS) {
         printf("Asset list full!\n");
@@ -81,7 +72,7 @@ void addAsset() {
     printf("Asset added successfully!\n");
 }
 
-// Display all assets
+
 void displayAssets() {
     if(assetCount == 0) {
         printf("No assets to display.\n");
@@ -95,8 +86,6 @@ void displayAssets() {
                assets[i].purchaseValue, assets[i].department, assets[i].condition);
     }
 }
-
-// Search asset by ID
 void searchAsset() {
     int id;
     printf("Enter Asset ID to search: ");
