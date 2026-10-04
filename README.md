@@ -8,7 +8,12 @@ System features are :
       Reports makes quick summary reports
 
 Compilation instructions: 
+    use in terminal windows :
+    gcc "PAP Project.c" "BudgetManagent.c" "assetManagment.c" "pap employee.c and .h" "report.c" "suppliers.c" -o mfms.exe && mfms.exe
 
+Running the code :
+in vscode temrinal project folder run:
+ - mfms.exe
 
    Responsibilities:   
   1 Employee Management Student – Geko
