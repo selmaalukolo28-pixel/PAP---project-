@@ -7,7 +7,7 @@
 *
 * Compile : gcc -std=c99 -Wall -Wextra -pedantic "PAP Project.c" -o PAP521S_Project_A
 * Run : ./PAP521S_Project_A
-* Author : [Pharrell Mwiya 226013006, Selma Alukolo 225090082, Lisema Garoës 225030772, Guillermo Heita 225109190, Joseph Heita 225062453]
+* Author : [Pharrell Mwiya 226013006, Selma Alukolo 225090082, Lisema Garoës 225030772, Guillermo Heita 225109190, Joseph Heita 225062453, Atidaishe Katore 225164752, and ]
 * Date : 2024-06-15
 */  
 
